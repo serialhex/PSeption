@@ -69,4 +69,6 @@ function PSeption {
 
 
 # Quine it
-PSeption -File PSeption.ps1
+# PSeption -File PSeption.ps1
+
+PSeption -File $args[0]

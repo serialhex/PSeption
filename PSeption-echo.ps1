@@ -23,11 +23,13 @@ function PSeption {
   }
 
   $out_str += "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"%WD%PSHELLFILE.ps1`"`n"
-  $out_str += "rem del `"%WD%PSHELLFILE.ps1`"`n"
+  $out_str += "del `"%WD%PSHELLFILE.ps1`"`n"
 
   Write-Output "writing to: `"$dir\$fname.bat`""
   Set-Content -Path "$dir/$fname.bat" -Value $out_str
 }
 
 # Quine it
-PSeption -File PSeption.ps1
+# PSeption -File PSeption.ps1
+
+PSeption -File $args[0]
